@@ -33,12 +33,13 @@ class Solution:
         m = len(obstacleGrid)
         n = len(obstacleGrid[0])
         sum = self.uniquePaths(m, n)
-        # write your code here
-        for m in range(len(obstacleGrid)):
-            for n in range(len(obstacleGrid[0])):
-                sum = sum - self.uniquePaths(m,n)
+        for x in range(len(obstacleGrid)):
+            for y in range(len(obstacleGrid[0])):
+                if obstacleGrid[x][y] != 0 :
+                    sum = sum - self.uniquePaths(x+1,y+1) * self.uniquePaths(m-x,m-y)
         return sum
 
 
 s = Solution()
-print(s.uniquePaths(5, 4))
+print(s.uniquePathsWithObstacles([[0,0,0,0],[0,0,1,0],[0,0,0,0],[0,0,0,0]]))
+
