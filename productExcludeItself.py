@@ -4,11 +4,10 @@ class Solution:
     @return: A long long array B and B[i]= A[0] * ... * A[i-1] * A[i+1] * ... * A[n-1]
     """
     def productExcludeItself(self, nums):
-        # write your code here
+        # 待优化
         n = [1]*len(nums)
         i = 0
         while i < len(nums):
-            # n[i] = 1
             if i != 0:
                 for j in range(0,i):
                     n[i] = n[i] * nums[j]
