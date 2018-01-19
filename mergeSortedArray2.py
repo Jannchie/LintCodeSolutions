@@ -30,7 +30,7 @@ class Solution:
     @param B: sorted integer array B which has n elements
     @return: void
     """
-    def mergeSortedArray(self, A, m, B, n):
+    def mergeSortedArray2(self, A, m, B, n):
         # write your code here
         for i in range(n):
             A[m+i] = B[i]
